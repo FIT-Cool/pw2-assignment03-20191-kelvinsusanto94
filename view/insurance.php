@@ -18,6 +18,7 @@ if (isset($deleteCommand) && $deleteCommand == 1) {
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Action</th>
     </tr>
     </thead>
 

@@ -51,7 +51,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="H:/Pemrograman Web 2/Theori/Minggu 2 - Insert/pw2_02" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -63,6 +63,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="B:\XAMPP\htdocs\pw2-assignment03-20191-kelvinsusanto94\css" />
       <recent name="B:\XAMPP\htdocs\pw2-assignment02-20191-kelvinsusanto94" />
     </key>
   </component>
@@ -114,6 +115,7 @@
       <workItem from="1568468943897" duration="12964000" />
       <workItem from="1569128543310" duration="1820000" />
       <workItem from="1569130536007" duration="10112000" />
+      <workItem from="1569161534055" duration="7438000" />
     </task>
     <servers />
   </component>

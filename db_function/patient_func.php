@@ -39,14 +39,14 @@ function addPatient($MRN, $CIN, $Name, $Address, $BirthPlace, $BirthDate, $Phone
     $link = null;
 }
 
-function deletePatient($med_record_number){
+function deletePatient($citizen_id_number){
     $link = new PDO("mysql:host=localhost;dbname=prakpw220191", "root", "");
     $link->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
     $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $query = "DELETE FROM patient WHERE med_record_number = ?";
+    $query = "DELETE FROM patient WHERE citizen_id_number = ?";
     $link->prepare($query);
     $statement = $link->prepare($query);
-    $statement->bindParam(1, $med_record_number, PDO::PARAM_STR);
+    $statement->bindParam(1, $citizen_id_number, PDO::PARAM_STR);
     $link->beginTransaction();
     if ($statement->execute()) {
         $link->commit();
@@ -56,16 +56,23 @@ function deletePatient($med_record_number){
     $link = null;
 }
 
-function updatePatient($id, $name){
+function updatePatient($medrecordnumber, $citizenidnumber, $name, $address, $birthplace, $birthdate, $phonenumber, $photo, $insuranceid){
     $link = new PDO("mysql:host=localhost;dbname=prakpw220191", "root", "");
     $link->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
     $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $query = "UPDATE insurance SET name_class = ? WHERE id = ?";
+    $query = "UPDATE patient SET med_record_number=?, citizen_id_number=?, name=?, address=?, birth_place=?, birth_date=?, phone_number=?, photo=?, insurance_id=? WHERE citizen_id_number=?";
     $link->prepare($query);
     $statement = $link->prepare($query);
-    $statement->bindParam(1, $name,
-        PDO::PARAM_STR);
-    $statement->bindParam(2, $id, PDO::PARAM_INT);
+    $statement->bindParam(1, $medrecordnumber, PDO::PARAM_STR);
+    $statement->bindParam(2, $citizenidnumber, PDO::PARAM_STR);
+    $statement->bindParam(3, $name, PDO::PARAM_STR);
+    $statement->bindParam(4, $address, PDO::PARAM_STR);
+    $statement->bindParam(5, $birthplace, PDO::PARAM_STR);
+    $statement->bindParam(6, $birthdate, PDO::PARAM_STR);
+    $statement->bindParam(7, $phonenumber, PDO::PARAM_STR);
+    $statement->bindParam(8, $photo, PDO::PARAM_STR);
+    $statement->bindParam(9, $insuranceid, PDO::PARAM_INT);
+    $statement->bindParam(10, $citizenidnumber, PDO::PARAM_STR);
     $link->beginTransaction();
     if ($statement->execute()) {
         $link->commit();
@@ -75,13 +82,13 @@ function updatePatient($id, $name){
     $link = null;
 }
 
-function getPatient($med_record_number){
+function getPatient($citizen_id_number){
     $link = new PDO("mysql:host=localhost;dbname=prakpw220191", "root", "");
     $link->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
     $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $query = "SELECT * FROM patient WHERE med_record_number = ? LIMIT 1";
+    $query = "SELECT * FROM patient WHERE citizen_id_number = ? LIMIT 1";
     $statement = $link -> prepare($query);
-    $statement->bindParam(1, $med_record_number, PDO::PARAM_STR);
+    $statement->bindParam(1, $citizen_id_number, PDO::PARAM_STR);
     $statement -> execute();
     $result = $statement -> fetch();
     $link = null;

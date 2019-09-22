@@ -16,8 +16,8 @@ if (isset($input)){
 //For Delete
 $deleteCommand = filter_input(INPUT_GET, 'delPat');
 if (isset($deleteCommand) && $deleteCommand == 1) {
-    $med_record_number = filter_input(INPUT_GET, 'med_record_number');
-    deletePatient($med_record_number);
+    $citizen_id_number = filter_input(INPUT_GET, 'citizen_id_number');
+    deletePatient($citizen_id_number);
 }
 ?>
 
@@ -33,6 +33,7 @@ if (isset($deleteCommand) && $deleteCommand == 1) {
         <th>Birth Date</th>
         <th>Phone Number</th>
         <th>Photo</th>
+        <th>Action</th>
     </tr>
     </thead>
 
@@ -41,21 +42,21 @@ if (isset($deleteCommand) && $deleteCommand == 1) {
         <fieldset>
             <legend> New Patient </legend>
             <label>Med Record Number : </label>
-            <input type="text" name="txtMRN" id="MRN" placeholder="isbn (13 Digit Number)" autofocus required class="form-input">
+            <input type="text" name="txtMRN" id="MRN" placeholder="Med Rec No. (ex. D-00000001)" autofocus required class="form-input">
             <label>Id Number : </label>
-            <input type="text" name="txtCIN" id="CIN" placeholder="title (ex. Cooking By Gordon Ramsey)" autofocus required class="form-input">
+            <input type="text" name="txtCIN" id="CIN" placeholder="13 Digit Number (ex. 1234567890123)" autofocus required class="form-input">
             <label>Name : </label>
-            <input type="text" name="txtName" id="Name" placeholder="author (ex. Gordon Ramsey)" autofocus required class="form-input">
+            <input type="text" name="txtName" id="Name" placeholder="Name (ex. Gordon Ramsey)" autofocus required class="form-input">
             <label>Address : </label>
-            <input type="text" name="txtAddress" id="Address" placeholder="author (ex. Sun MEdia)" autofocus required class="form-input">
+            <input type="text" name="txtAddress" id="Address" placeholder="Address (ex. Dago Resort No.3)" autofocus required class="form-input">
             <label>Birth Place : </label>
-            <input type="text" name="txtBirthPlace" id="BirthPlace" placeholder="published date (ex. 2018-03-04)" autofocus required class="form-input">
+            <input type="text" name="txtBirthPlace" id="BirthPlace" placeholder="Birth Place (ex. Tasikmalaya)" autofocus required class="form-input">
             <label>Birth Date : </label>
-            <input type="date" name="txtBirthDate" id="BirthDate" placeholder="published date (ex. 2018-03-04)" autofocus required class="form-input">
+            <input type="date" name="txtBirthDate" id="BirthDate" placeholder="Birth Date (ex. 2018-03-04)" autofocus required class="form-input">
             <label>Phone Number : </label>
-            <input type="text" name="txtPhoneNumber" id="PhoneNumber" placeholder="published date (ex. 2018-03-04)" autofocus required class="form-input">
+            <input type="text" name="txtPhoneNumber" id="PhoneNumber" placeholder="Phone Number (ex. 081437258115)" autofocus required class="form-input">
             <label>Photo : </label>
-            <input type="text" name="txtPhoto" id="Photo" placeholder="published date (ex. 2018-03-04)" autofocus required class="form-input">
+            <input type="text" name="txtPhoto" id="Photo" placeholder="Photo (ex. Mr. Knee)" autofocus required class="form-input">
             <select name="txtInsurance">
                 <?php
                 $data = getAllInsurance();
@@ -81,7 +82,7 @@ if (isset($deleteCommand) && $deleteCommand == 1) {
         echo '<td>' . date_format(date_create($patient['birth_date']), "d M Y") . '</td>';
         echo '<td>' . $patient['phone_number'] . '</td>';
         echo '<td>' . $patient['photo'] . '</td>';
-        echo '<td><button onclick="deletePatient(' . $patient ['med_record_number'] . ');"> Delete </button><button onclick="updateInsurance(' . $insurance ['id'] . ');"> Update </button></td>';
+        echo '<td><button onclick="deletePatient(' . $patient ['citizen_id_number'] . ');">Delete</button><button onclick="updatePatient(' . $patient ['citizen_id_number'] . ');">Update</button></td>';
         echo '</tr>';
     }
     ?>

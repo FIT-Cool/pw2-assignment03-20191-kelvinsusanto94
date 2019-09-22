@@ -10,14 +10,14 @@ include_once 'db_function/patient_func.php';
     <title>Pemrograman Web 2</title>
     <meta name="author" content="Kelvin (1772039)">
     <meta name="description" content="PHP Navigation and PHP Data Object (PDO)">
-    <link rel="stylesheet" type="text/css" href="tableStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/tableStyle.css">
     <script src="js/my_js.js"></script>
 </head>
 
 <body>
 <div class="page">
     <header>
-        <h2 align="center">Pemrograman Web Praktium 2</h2>
+        <h2 align="center">Pemrograman Web Praktikum 3</h2>
     </header>
 
     <nav>
