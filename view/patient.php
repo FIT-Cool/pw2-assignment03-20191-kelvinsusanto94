@@ -16,8 +16,8 @@ if (isset($input)){
 //For Delete
 $deleteCommand = filter_input(INPUT_GET, 'delPat');
 if (isset($deleteCommand) && $deleteCommand == 1) {
-    $citizen_id_number = filter_input(INPUT_GET, 'citizen_id_number');
-    deletePatient($citizen_id_number);
+    $med_record_number = filter_input(INPUT_GET, 'med_record_number');
+    deletePatient($med_record_number);
 }
 ?>
 
@@ -82,7 +82,7 @@ if (isset($deleteCommand) && $deleteCommand == 1) {
         echo '<td>' . date_format(date_create($patient['birth_date']), "d M Y") . '</td>';
         echo '<td>' . $patient['phone_number'] . '</td>';
         echo '<td>' . $patient['photo'] . '</td>';
-        echo '<td><button onclick="deletePatient(\'' . $patient ['citizen_id_number'] . '\');">Delete</button><button onclick="updatePatient(\'' . $patient ['citizen_id_number'] . '\');">Update</button></td>';
+        echo '<td><button onclick="deletePatient(\'' . $patient ['med_record_number'] . '\');">Delete</button><button onclick="updatePatient(\'' . $patient ['med_record_number'] . '\');">Update</button></td>';
         echo '</tr>';
     }
     ?>

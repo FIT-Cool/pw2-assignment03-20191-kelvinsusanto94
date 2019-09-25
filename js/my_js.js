@@ -5,10 +5,10 @@ function deleteInsurance(id) {
     }
 }
 
-function deletePatient(citizen_id_number){
+function deletePatient(med_record_number){
     var confirm = window.confirm("Confirm delete Patient?")
     if (confirm){
-        window.location = "index.php?menu=pt&delPat=1&citizen_id_number=" + citizen_id_number;
+        window.location = "index.php?menu=pt&delPat=1&med_record_number=" + med_record_number;
     }
 }
 
@@ -16,6 +16,6 @@ function updateInsurance(id){
     window.location = "index.php?menu=updIns&id=" + id;
 }
 
-function updatePatient(citizen_id_number){
-    window.location="index.php?menu=updPat&citizen_id_number=" + citizen_id_number;
+function updatePatient(med_record_number){
+    window.location="index.php?menu=updPat&med_record_number=" + med_record_number;
 }

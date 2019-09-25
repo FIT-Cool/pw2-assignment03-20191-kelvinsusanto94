@@ -1,8 +1,8 @@
 <?php
 //For data fetch
-$citizen_id_number = filter_input(INPUT_GET, 'citizen_id_number');
-if (isset($citizen_id_number)) {
-    $patient = getPatient($citizen_id_number);
+$med_record_number = filter_input(INPUT_GET, 'med_record_number');
+if (isset($med_record_number)) {
+    $patient = getPatient($med_record_number);
 }
 
 //For Update
@@ -29,7 +29,7 @@ if (isset($input)) {
         <label>Med Record Number : </label>
         <input type="text" name="txtMRN" id="MRN" placeholder="Med Rec No. (ex. D-00000001)" autofocus required class="form-input" value="<?php echo $patient['med_record_number']; ?>" readonly>
         <label>Id Number : </label>
-        <input type="text" name="txtCIN" id="CIN" placeholder="13 Digit Number (ex. 1234567890123)" required class="form-input" value="<?php echo $citizen_id_number; ?>" readonly>
+        <input type="text" name="txtCIN" id="CIN" placeholder="13 Digit Number (ex. 1234567890123)" required class="form-input">
         <label>Name : </label>
         <input type="text" name="txtName" id="Name" placeholder="Name (ex. Gordon Ramsey)" autofocus required class="form-input">
         <label>Address : </label>
