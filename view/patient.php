@@ -82,7 +82,7 @@ if (isset($deleteCommand) && $deleteCommand == 1) {
         echo '<td>' . date_format(date_create($patient['birth_date']), "d M Y") . '</td>';
         echo '<td>' . $patient['phone_number'] . '</td>';
         echo '<td>' . $patient['photo'] . '</td>';
-        echo '<td><button onclick="deletePatient(' . $patient ['citizen_id_number'] . ');">Delete</button><button onclick="updatePatient(' . $patient ['citizen_id_number'] . ');">Update</button></td>';
+        echo '<td><button onclick="deletePatient(\'' . $patient ['citizen_id_number'] . '\');">Delete</button><button onclick="updatePatient(\'' . $patient ['citizen_id_number'] . '\');">Update</button></td>';
         echo '</tr>';
     }
     ?>

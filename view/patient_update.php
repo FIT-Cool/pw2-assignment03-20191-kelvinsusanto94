@@ -27,9 +27,9 @@ if (isset($input)) {
         <legend> Update Patient</legend>
         <label> Patient Name </label>
         <label>Med Record Number : </label>
-        <input type="text" name="txtMRN" id="MRN" placeholder="Med Rec No. (ex. D-00000001)" autofocus required class="form-input">
+        <input type="text" name="txtMRN" id="MRN" placeholder="Med Rec No. (ex. D-00000001)" autofocus required class="form-input" value="<?php echo $patient['med_record_number']; ?>" readonly>
         <label>Id Number : </label>
-        <input type="text" name="txtCIN" id="CIN" placeholder="13 Digit Number (ex. 1234567890123)" autofocus required class="form-input">
+        <input type="text" name="txtCIN" id="CIN" placeholder="13 Digit Number (ex. 1234567890123)" required class="form-input" value="<?php echo $citizen_id_number; ?>" readonly>
         <label>Name : </label>
         <input type="text" name="txtName" id="Name" placeholder="Name (ex. Gordon Ramsey)" autofocus required class="form-input">
         <label>Address : </label>
